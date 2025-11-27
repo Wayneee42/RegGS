@@ -18,6 +18,11 @@ def skew_symmetric(v):
     ])
 
 def se3_exp(xi, device):
+    """
+    se(3) 李代数是一个6维向量 xi = [w_x, w_y, w_z, v_x, v_y, v_z],
+    - 前3个分量 (w_x, w_y, w_z) 编码了旋转。
+    - 后3个分量 (v_x, v_y, v_z) 编码了平移。
+    """
     """将李代数转换为SE(3)变换矩阵（更精确的实现）"""
     rot_vec = xi[:3]
     t = xi[3:]
